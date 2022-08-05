@@ -42,7 +42,7 @@ const UpdatePlace = () => {
     (async () => {
       try {
         const data = await sendRequest(
-          `http://localhost:5000/api/places/${placeId}`
+          `https://mern-place-api.herokuapp.com/${placeId}`
         );
         setPlace(data.place);
 
@@ -83,7 +83,7 @@ const UpdatePlace = () => {
     event.preventDefault();
     try {
       const data = await sendRequest(
-        `http://localhost:5000/api/places/${placeId}`,
+        `https://mern-place-api.herokuapp.com/${placeId}`,
         "PUT",
         JSON.stringify({
           title: formState.inputs.title.value,

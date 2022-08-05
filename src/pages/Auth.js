@@ -77,7 +77,7 @@ const Auth = () => {
     if (isLoginPage) {
       try{
         const data = await sendRequest(
-          "http://localhost:5000/api/users/login",
+          "https://mern-place-api.herokuapp.com/api/users/login",
           "POST",
           JSON.stringify({
             email : formState.inputs.email.value,
@@ -99,7 +99,7 @@ const Auth = () => {
         formData.append('image', formState.inputs.image.value);
 
         const data = await sendRequest(
-          "http://localhost:5000/api/users/register",
+          "https://mern-place-api.herokuapp.com/api/users/register",
            "POST",
           formData,
         );

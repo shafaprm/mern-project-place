@@ -30,7 +30,7 @@ const PlaceItem = (props) => {
 
   const deleteHandler = async () => {
     try{
-      const data = await sendRequest(`http://localhost:5000/api/places/${props.id}`, 'DELETE', null, {'Authorization': `bearer ${authContext.token}`});
+      const data = await sendRequest(`https://mern-place-api.herokuapp.com/${props.id}`, 'DELETE', null, {'Authorization': `bearer ${authContext.token}`});
 
       props.onDelete(props.id);
     }catch(err){
@@ -73,7 +73,7 @@ const PlaceItem = (props) => {
       <li className={styles["place-item"]}>
         <Card className={styles["place-item__content"]}>
           <div className={styles["place-item__image"]}>
-            <img src={`http://localhost:5000/${props.image}`} alt={props.title} />
+            <img src={`https://mern-place-api.herokuapp.com/${props.image}`} alt={props.title} />
           </div>
           <div className={styles["place-item__info"]}>
             <h2>{props.title}</h2>

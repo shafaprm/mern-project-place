@@ -15,7 +15,7 @@ const UserPlaces = () => {
     (async () => {
       try{
         const userId = params.user_id;
-        const data = await sendRequest(`http://localhost:5000/api/places/user/${userId}`);
+        const data = await sendRequest(`https://mern-place-api.herokuapp.com/api/places/user/${userId}`);
         setPlaces(data.places)
       }catch(err){
         console.log(err)

@@ -12,7 +12,7 @@ const Users = () => {
   useEffect(() => {
     (async () => {
       try {
-        const data = await sendRequest('http://localhost:5000/api/users');
+        const data = await sendRequest('https://mern-place-api.herokuapp.com/api/users');
 
         setUsers(data.users);
       } catch (err) {

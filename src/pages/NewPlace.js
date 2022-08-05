@@ -47,7 +47,7 @@ const NewPlace = () => {
       formData.append('address', formState.inputs.address.value);
       formData.append("image", formState.inputs.image.value)
 
-      const data = await sendRequest('http://localhost:5000/api/places', 'POST',formData, {'Authorization' : `bearer ${authContext.token}`});
+      const data = await sendRequest('https://mern-place-api.herokuapp.com/api/places', 'POST',formData, {'Authorization' : `bearer ${authContext.token}`});
 
       navigate('/', { replace : true });
     }catch(err){
